@@ -2,10 +2,8 @@ using System;
 
 public class ProjectEuler3
 {
-    public static void Main()
+    public static int LargestPrimeFactor(long n)
     {
-        long n = 600851475143;
-       
         int largest = 1;
         int count = 0;
         int i = 2;
@@ -23,7 +21,12 @@ public class ProjectEuler3
         }while(n != 1);
         
        
-       Console.WriteLine(largest);
+        return largest;
+    }
+    
+    public static void Main()
+    {
+        Console.WriteLine(LargestPrimeFactor(600851475143));    
     }
 }
 //Answer is 6857
