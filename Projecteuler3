@@ -1,0 +1,29 @@
+using System;
+
+public class ProjectEuler3
+{
+    public static void Main()
+    {
+        long n = 600851475143;
+       
+        int largest = 1;
+        int count = 0;
+        int i = 2;
+       do
+        {
+            if(n % i == 0)
+            {
+               
+                largest = i;
+                n = n/i;
+                count++;
+                
+            }
+            i++;
+        }while(n != 1);
+        
+       
+       Console.WriteLine(largest);
+    }
+}
+//Answer is 6857
