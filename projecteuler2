@@ -25,3 +25,4 @@ public class ProjectEuler2
         Console.WriteLine(sum);
     }
 }
+//answer is 4613732
