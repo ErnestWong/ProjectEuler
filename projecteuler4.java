@@ -1,8 +1,12 @@
-
+//answer is 906609
 public class Problem4 {
+	/**
+	 * method to determine if number is a palindrome
+	*/
 	private static boolean isPalindrome(int n){
-		int size = (int) Math.ceil(Math.log10(n));
-		int[] array = new int[size + 1];
+		//store digits of number in array
+		int size = (int) Math.floor(Math.log10(n)) + 1;
+		int[] array = new int[size];
 		int index = 0;
 		while(n > 0){
 			int digit = n % 10;
@@ -11,6 +15,8 @@ public class Problem4 {
 			index++;
 		}
 		
+		//compare first and last element for equality; 
+		//increment head and decrement tail if equal, else return false
 		int head = 0;
 		int tail = size -1;
 		while(head < tail){
@@ -22,6 +28,9 @@ public class Problem4 {
 		return true;
 	}
 	
+	/**
+	 * check products of 999 to 100 for palindromes; return the largest one
+	*/
 	private static int doproblem(){
 		int max = -1;
 		for(int i = 999; i > 99; i--){
