@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <stdbool.h>
+//Answer: -59231
 
+/**
+ * method determines if number is prime
+*/
 bool isPrime( int n)
 {
 	int i;
@@ -16,6 +20,8 @@ void doproblem()
 	int a, b;
 	int maxcount = 0;
 	int maxA, maxB;
+	
+	//loop through -999 to 999 for a and b  where n^2 + an + b
 	for(a = -999; a < 1000; a++)
 	{
 		for(b = -999; b < 1000; b++)
@@ -23,6 +29,8 @@ void doproblem()
 			bool primeStreak = true;
 			int n = 0;
 			int primecount = 0;
+			
+			//keep counting while there is a streak where n is prime as it increments
 			while(primeStreak)
 			{
 				int p = n * n + a * n + b;
@@ -32,6 +40,7 @@ void doproblem()
 				n++;
 			}
 			
+			//record the max a and b value
 			if(primecount > maxcount) {
 				maxcount = primecount;
 				maxA = a;
