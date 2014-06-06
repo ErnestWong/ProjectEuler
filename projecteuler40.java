@@ -1,4 +1,4 @@
-//answer is 210
+//answer is 210 
 public class Problem40{
     static void doproblem(){
 		//stop at d1, d10, d100... d1000000 are multiples of 10 
