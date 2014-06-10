@@ -1,39 +1,44 @@
+//Answer: 31626
 #include <iostream>
 
-int sumdivisor(int n)
+int divisorsum(int n)
 {
-	int sum = 0;
-	for(int i = 0; i < n; i++)
+	int sum = 1;
+	for(int i = 2; i * i <= n; i++)
 	{
-		if(n % i == 0) sum += i;
+		if(n % i == 0) 
+		{
+			int quotient = n / i;
+			sum += quotient;
+			sum += i;
+		}
 	}
 	return sum;
 }
 
-bool isamicable(int a, int b)
-{
-	if(sumdivisor(a) == b && sumdivisor(b) == a) return true;
-	else return false;
-}
-
 void doproblem()
 {
-	long amicablesum = 0;
+	int divsums[10001];
 	for(int i = 1; i < 10000; i++)
 	{
-		for(int j = 1; j < 10000; j++)
-		{
-			if(i != j)
-			{
-				if(isamicable(i, j)) amicablesum = amicablesum + i + j;
+		divsums[i] = divisorsum(i);
+	}
+	int sum = 0;
+	for(int j = 2; j < 10000; j++)
+	{
+		if(divsums[j] <= 10000)
+			if(divsums[divsums[j]] == j && divsums[j] != j){
+				 sum += j;
+				std::cout<<divsums[j];
 			}
-		}
 	}
 	
-	std::cout << amicablesum << "\n";
+	std::cout << "The answer is " << sum << "\n";
 }
 
 int main()
 {
 	doproblem();
+	
+	return 0;
 }
